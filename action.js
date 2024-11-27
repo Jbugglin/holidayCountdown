@@ -1,22 +1,25 @@
-//get current day...
-let currentDay = new Date();
-const now = Date.now();
+//get the year to append in h1
+let d = new Date();
+let year = d.getFullYear();
+document.getElementById('year').innerHTML = year;
 
-//Get Year and append to h1
-const year = currentDay.getFullYear();
-const yearContainer = document.getElementById('year').innerHTML = year;
+//Setting the date for Christmas countdown
+let christmasCountdown = new Date("Dec 25, 2024").getTime();
 
-//convert christmas day to mseconds in the year...
+//Update the countdown for every 1 second
+let x = setInterval(function() {
+    //Get Today's date and time
+    let now = new Date().getTime();
 
-let xmas = Date.parse("December 25, 2024").getTime();
+    //Find difference between now and countdown date
+    let diff = christmasCountdown - now;
 
-//subtract christmas day msec from current day msec...
-let daysToXmas = xmas - now;
+    //Time calculations
+    let daysRemaining = Math.floor(diff / (1000*60*60*24));
+    let hoursRemaining = Math.floor(diff % (1000*60*60*24) / (1000*60*60));
+    let minutesRemaining = Math.floor(diff % (1000*60*60) / (1000*60));
+    let secondsRemaining = Math.floor(diff % (1000*60) /1000);
 
-//Convert back to days from msec...
-let convertedDays = daysToXmas * 0.000000011574074;
-
-//Time to append to main container...
-const countdownContainer = document.getElementById('countdownContainer').innerHTML = Math.round(convertedDays);
-
-//Need to add a functionality that adds to the year...
+    //Display remaining time in countdown
+    document.getElementById('countdownContainer').innerHTML = daysRemaining+ ' : ' +hoursRemaining+ ' : ' +minutesRemaining+ ' : ' +secondsRemaining;
+});
