@@ -8,7 +8,7 @@ const yearContainer = document.getElementById('year').innerHTML = year;
 
 //convert christmas day to mseconds in the year...
 
-let xmas = Date.parse("December 25, 2024");
+let xmas = Date.parse("December 25, 2024").getTime();
 
 //subtract christmas day msec from current day msec...
 let daysToXmas = xmas - now;
