@@ -41,6 +41,7 @@ h1 {
     width: 100%;
     height: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: gold;

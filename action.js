@@ -21,5 +21,9 @@ let x = setInterval(function() {
     let secondsRemaining = Math.floor(diff % (1000*60) /1000);
 
     //Display remaining time in countdown
-    document.getElementById('countdownContainer').innerHTML = daysRemaining+ ' : ' +hoursRemaining+ ' : ' +minutesRemaining+ ' : ' +secondsRemaining;
+    document.getElementById('days').innerHTML = "Days: " +daysRemaining;
+    document.getElementById('hours').innerHTML = "Hours: " +hoursRemaining;
+    document.getElementById('minutes').innerHTML = "Minutes: " +minutesRemaining;
+    document.getElementById('seconds').innerHTML = "Seconds: " +secondsRemaining;
+
 });
